@@ -12,7 +12,7 @@ A simulação continua até que todas as 10 moscas atinjam uma distância total 
 
 A cada passo da simulação, um número aleatório entre 1 e 10 é sorteado para determinar a quantidade de moscas que serão movidas. Esse número é usado para criar um vetor dinâmico de ponteiros para moscas. Em seguida, são sorteadas quais moscas serão movidas, e os endereços das moscas sorteadas são guardados em um vetor dinâmico.
 
-- Foi implementada uma função `Deslocar` que recebe a posição atual da mosca (Ponto) e um vetor e retorna a nova posição da mosca. Apenas as moscas que ainda não atingiram a distância alvo devem ser deslocadas.
+- Foi implementada uma função `Deslocar` - que utilizam conceitos de Coordenadas Cartesianas e Coordenadas Polares representado por um Ângulo e uma Magnitude - que recebe a posição atual da mosca (Ponto) e um vetor e retorna a nova posição da mosca. Apenas as moscas que ainda não atingiram a distância alvo devem ser deslocadas.
 
 O programa exibe o número do passo da simulação, quantas moscas foram sorteadas, quais posições foram sorteadas e quais moscas atingiram a marca de 100 cm naquele passo. Se nenhuma mosca atingiu a marca, é exibido zero. Exemplo:
 
