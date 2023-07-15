@@ -8,6 +8,36 @@ As moscas são identificadas por um nome e uma cor RGB, que são lidos no iníci
 
 A simulação continua até que todas as 10 moscas atinjam uma distância total de 100 centímetros. Quando uma mosca atinge essa marca, ela é considerada inativa e não é mais movida. A simulação é encerrada quando todas as moscas estão inativas.
 
+### Simulação do Voo
+
+A cada passo da simulação, um número aleatório entre 1 e 10 é sorteado para determinar a quantidade de moscas que serão movidas. Esse número é usado para criar um vetor dinâmico de ponteiros para moscas. Em seguida, são sorteadas quais moscas serão movidas, e os endereços das moscas sorteadas são guardados em um vetor dinâmico.
+
+- Foi implementada uma função `Deslocar` que recebe a posição atual da mosca (Ponto) e um vetor e retorna a nova posição da mosca. Apenas as moscas que ainda não atingiram a distância alvo devem ser deslocadas.
+
+O programa exibe o número do passo da simulação, quantas moscas foram sorteadas, quais posições foram sorteadas e quais moscas atingiram a marca de 100 cm naquele passo. Se nenhuma mosca atingiu a marca, é exibido zero. Exemplo:
+
+| Passo | Número Sorteado | Posições Sorteadas | Moscas que Atingiram 100cm |
+|-------|-----------------|--------------------|---------------------------|
+| #1    | 5               | 0 2 7 4 8          | 0                         |
+| #2    | 2               | 9 2                | 0                         |
+| #3    | 4               | 0 8 3 7            | Knuth                     |
+| #4    | 8               | 2 4 1 0 3 5 9 7    | Naur Turing               |
+
+Quando uma das moscas atingir a marca de 100 cm, ela deve ser marcada como inativa. Uma 
+mosca inativa não deve ter sua posição atualizada, nem o seu nome exibido nos passos de 
+simulação. Se no sorteio, uma mosca inativa for escolhida deve ser exibido um “x” vermelho no 
+lugar do número sorteado para indicar que uma mosca inativa foi sorteada:
+
+| Passo | Número Sorteado | Posições Sorteadas | Moscas que Atingiram 100cm |
+|-------|-----------------|--------------------|---------------------------|
+| #50   | 4               | 1 x 6 3 9          | 0                         |
+| #51   | 3               | 1 2                | 0                         |
+| #52   | 4               | x 8 3 7            | Tompson                   |
+| #53   | 2               | x x                | 0                         |
+| ...   | ...             | ...                | ...                       |
+
+
+
 ## Organização do Código
 
 O código foi organizado em bibliotecas para uma melhor modularização e reutilização de código. As principais bibliotecas são:
